@@ -35,6 +35,7 @@ namespace MyExtensions
         /// <summary>
         /// Esegue l'operazione per tutte le entità nella in entities, salvando ad ogni pagina
         /// </summary>
+        /// <remarks>http://stackoverflow.com/questions/5940225/fastest-way-of-inserting-in-entity-framework/5942176#5942176</remarks>
         /// <typeparam name="TEntity"></typeparam>
         /// <param name="context"></param>
         /// <param name="entities"></param>
