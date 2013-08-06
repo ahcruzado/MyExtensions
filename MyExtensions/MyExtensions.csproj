@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
@@ -91,6 +92,7 @@
     <Compile Include="ActionFilters\RoleAuthorize.cs" />
     <Compile Include="ActionFilters\UserNameFilter.cs" />
     <Compile Include="BitHelper.cs" />
+    <Compile Include="ImpersonatingService.cs" />
     <Compile Include="ModeDetector.cs" />
     <Compile Include="MVCExtension.cs" />
     <Compile Include="EFExtension.cs" />
