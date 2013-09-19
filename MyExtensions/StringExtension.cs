@@ -291,6 +291,46 @@ namespace MyExtensions
         }
     }
 
+    /// <summary>
+    /// Preso dal sorgente di Membership.GeneratePassword()
+    /// </summary>
+    /// <param name="length"></param>
+    /// <returns></returns>
+    private static string generatePassword(int length)
+    {
+        if (length < 1 || length > 128)
+        {
+            throw new ArgumentException("Length non corretta");
+        }
+        string text;
+        byte[] array = new byte[length];
+        char[] array2 = new char[length];
+        new RNGCryptoServiceProvider().GetBytes(array);
+        for (int i = 0; i < length; i++)
+        {
+            int num2 = (int)(array[i] % 62);
+            if (num2 < 10)
+            {   // numeri
+                array2[i] = (char)(48 + num2);
+            }
+            else
+            {   // Maiuscole
+                if (num2 < 36)
+                {
+                    array2[i] = (char)(65 + num2 - 10);
+                }
+                else
+                {   // minuscole
+                    if (num2 < 62)
+                    {
+                        array2[i] = (char)(97 + num2 - 36);
+                    }
+                }
+            }
+        }
+        text = new string(array2);
+        return text;
+    }
 
     public enum VariationMode
     {
